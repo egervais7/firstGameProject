@@ -19,7 +19,7 @@ var score = 0;
 var shuffleboard = function(){
   $('.shuffleBoard').on('click', (function(){
     alert('!!!!!!!!!!READ THESE RULES BEFORE YOU PLAY!!!!!!!!!! Letters for words must touch HORIZONTALLY, VERTICALLY, or DIAGONALLY and may only be used once per word. Words must be at least 3 letters in length. Good luck!');
-    var counter = 20;
+    var counter = 120;
     $('.playerForm').show();
     $('.playerInput').focus();
     $('.shuffleBoard').fadeOut(10);
@@ -104,7 +104,7 @@ var getWords = function(){
 // set local storage for All Scores to save top scores
   var postScore = function(){
     allScores.push(score);
-    var name = swal("Good job!", "You found " + validWords.length + " valid words for " + score + " points", "success");
+    var name = alert("You found " + validWords.length + " valid words for " + score + " points");
     allScores.sort(function(a,b){
       return b-a;
     });
@@ -122,6 +122,7 @@ var getWords = function(){
   var clearScoreBoard = function(){
     $('.clearScores').on('click', function(){
       $('.scoreBoard').empty();
+      var allScores = [];
       localStorage.clear();
     });
   };
