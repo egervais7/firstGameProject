@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Simple fun boggle game!</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" integrity="sha512-dTfge/zgoMYpP7QbHy4gWMEGsbsdZeCXz7irItjcC3sPUFtf0kuFbDz/ixG7ArTxmDjLXDmezHubeNikyKGVyQ==" crossorigin="anonymous">
+    <link rel="stylesheet" href="gameBoggle.css">
+    <link href='https://fonts.googleapis.com/css?family=Press+Start+2P' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+    <script type="text/javascript" src="playersBoggle.js"></script>
+    <script type="text/javascript" src="wordsBoggle.js"></script>
+  </head>
+  <body>
+    <nav class="navbar custNavBar">
+      <div class="container container fluid">
+        <div class="navbar-header col-md-12">
+          <h1><center>Let's Search For Words!</center></h1>
+        </div>
+      </div>
+    </nav>
+    <section class="row playerRow">
+      <div class="col-md-3 scorePlayer1">
+        <h2>Player</h2>
+        <button type="button" class="btn btn-default scoreSum">Get score</button>
+      </div>
+      <div class="col-md-6 timerDiv">
+        <h3>Gameboard<br>
+        <button type="button" class="btn btn-default shuffleBoard">Shuffle Board!</button></p>
+        <span id="countdown">20</span>seconds
+        </h3>
+      </div>
+      <div class="col-md-3">
+        <h2>Score Board</h2>
+      </div>
+    </section>
+    <section class="row gameRow">
+      <div class="col-md-3 player">
+        <form class="playerForm">
+        	  <input class="playerInput" type="text" placeholder="Type you word : ">
+            <!-- <button type="button" class="btn btn-default playerOneSubmit">submit</button> -->
+      	</form>
+        <div>
+          <ol class="gameWords"></ol>
+        </div>
+      </div>
+      <div class="col-md-6" id="boggleBoard">
+        <div class="aisle" id="A">
+          <div id="a1" class="dice"></div>
+          <div id="a2" class="dice"></div>
+          <div id="a3" class="dice"></div>
+          <div id="a4" class="dice"></div>
+        </div>
+        <div class="aisle" id="B">
+          <div id="b1" class="dice"></div>
+          <div id="b2" class="dice"></div>
+          <div id="b3" class="dice"></div>
+          <div id="b4" class="dice"></div>
+        </div>
+        <div class="aisle" id="C">
+          <div id="c1" class="dice"></div>
+          <div id="c2" class="dice"></div>
+          <div id="c3" class="dice"></div>
+          <div id="c4" class="dice"></div>
+        </div>
+        <div class="aisle" id="D">
+          <div id="d1" class="dice"></div>
+          <div id="d2" class="dice"></div>
+          <div id="d3" class="dice"></div>
+          <div id="d4" class="dice"></div>
+        </div>
+      </div>
+      <div class="col-md-3 topScores">
+        <h2>Player Scores!</h2>
+        <ol class="scoreBoard"></ol>
+      </div>
+    </section>
+  </body>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js" integrity="sha512-K1qjQ+NcF2TYO/eI3M6v8EiNYZfA95pQumfvcVrTHtwQVDG+aHRqLi/ETn2uB+1JqwYqVG3LIvdm9lj6imS/pQ==" crossorigin="anonymous"></script>
+</html>
