@@ -61,6 +61,7 @@ playerWords();
 
 // on submit, takes player words ul and pushes to array
 var getWords = function(){
+  var allScores = [];
   $('.scoreSum').on('click', function(){
     $('.shuffleBoard').fadeIn(3000);
     $('li.answer').each(function(){
@@ -118,14 +119,14 @@ var getWords = function(){
     }
    localStorage.setItem('bestScores', JSON.stringify(allScores));
   };
-};
   var clearScoreBoard = function(){
     $('.clearScores').on('click', function(){
-      $('.scoreBoard').empty();
       var allScores = [];
+      $('.scoreBoard').empty();
       localStorage.clear();
     });
   };
+  clearScoreBoard();
+};
 getWords();
-clearScoreBoard();
 });
