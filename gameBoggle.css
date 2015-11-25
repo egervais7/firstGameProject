@@ -5,7 +5,6 @@ body {
 }
 .custNavBar {
   background-color : grey;
-
 }
 h1 {
   text-align  : center;
@@ -17,9 +16,18 @@ h1 {
 }
 .playerRow {
   text-align : center;
+  position   : relative;
+  top        : -30px;
 }
 .shuffleBoard {
   font-size : 25px;
+}
+#countdown {
+  font-size : 45px;
+}
+.scoreSum {
+  font-size   : 20px;
+  width       : 200px;
 }
 h2 {
   color       : #0008AF;
@@ -30,19 +38,24 @@ p {
   color : orange;
 }
 h3 {
-  color       : #0008AF;
+  color       : #FFFFFF;
   font-family : Courier New;
+  font-size   : 30px;
   font-weight : bold;
+  position    : relative;
+  top         : 20px;
 }
 .player {
   font-family       : 'Pacifico', cursive;
-  font-size         : 10px;
-  height            : 100%;
+  font-size         : 20px;
+  text-align        : center;
+  height            : 600px;
   background-image  : url("http://i.stack.imgur.com/8zEoh.png");
   background-size   : 95% 100%;
   background-repeat : no-repeat;
   position          : relative;
-  left              : 25px;
+  top               : -20px;
+  left              : 20px;
 }
 .topScores {
   font-family       : 'Press Start 2P', cursive;
@@ -50,11 +63,11 @@ h3 {
   height            : 600px;
   width             : 380px;
   background-image  : url("http://i.stack.imgur.com/8zEoh.png");
-  background-size   : 90% 90%;
+  background-size   : 90% 100%;
   background-repeat : no-repeat;
   position          : relative;
-  top               : -40px;
-  left              : 25px;
+  top               : -20px;
+  left              : 10px;
 }
 .gameRow {
   text-align : center;
@@ -62,6 +75,10 @@ h3 {
 .timerDiv {
   position : relative;
   top      : -30px;
+}
+.clearScores {
+  position : relative;
+  right    : 10px;
 }
 .playerInput {
   border-radius : 15px;
@@ -78,7 +95,7 @@ h3 {
   margin           : 0 auto;
   position         : relative;
   top              : -40px;
-  left             : 20px;
+  left             : 5px;
 }
 .dice {
 	float          : left;
@@ -106,4 +123,7 @@ h3 {
 }
 .scoreBoard {
   text-align  : left;
+  font-size   : 20px;
+  position    : relative;
+  left        : 140px;
 }

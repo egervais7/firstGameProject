@@ -23,6 +23,7 @@ var shuffleboard = function(){
     $('.playerForm').show();
     $('.playerInput').focus();
     $('.shuffleBoard').fadeOut(10);
+    $('.scoreSum').hide();
     $('.dice').each(function(){
      $(this).text(letters[Math.floor(Math.random()*letters.length)]);
     });
@@ -35,6 +36,7 @@ var shuffleboard = function(){
          alert('2 minutes up! Click Get Score!');
          clearInterval(counter);
          $('.playerForm').hide();
+         $('.scoreSum').show();
       }
     }, 1000);
         $('.gameWords li').remove();
@@ -59,66 +61,68 @@ var playerWords = function() {
   };
 playerWords();
 
-// on submit, takes player words ul and pushes to array
-var getWords = function(){
-  var allScores = [];
-  $('.scoreSum').on('click', function(){
-    $('.shuffleBoard').fadeIn(3000);
-    $('li.answer').each(function(){
-      enteredWords.push(this.innerHTML);
+  // on submit, takes player words ul and pushes to array
+  var getWords = function(){
+    $('.scoreSum').on('click', function(){
+      $('.shuffleBoard').fadeIn(3000);
+      $('li.answer').each(function(){
+        enteredWords.push(this.innerHTML);
+      });
+      getValidWords();
     });
-    getValidWords();
-  });
 
-// finds valid words on boggle dictionary file and puts indexed words back into array
-// find way to let only one of each word go through
-  var getValidWords = function(){
-    for (var i = 0; i < enteredWords.length; i++){
-      var goodWords = boggleDictionary.indexOf(enteredWords[i]);
-      if (goodWords !== -1){
-        validWords.push(boggleDictionary[goodWords]);
+  // finds valid words on boggle dictionary file and puts indexed words back into array
+  // find way to let only one of each word go through
+    var getValidWords = function(){
+      for (var i = 0; i < enteredWords.length; i++){
+        var goodWords = boggleDictionary.indexOf(enteredWords[i]);
+        if (goodWords !== -1){
+          validWords.push(boggleDictionary[goodWords]);
+        }
       }
-    }
-    getGameScore();
-  };
+      getGameScore();
+    };
 
-// valid words ran through if statement to score each word and add to score
-  var getGameScore = function(){
-    for (var i = 0; i < validWords.length; i++) {
-      if (validWords[i].length === 3) {
-        score++;
-      } else if (validWords[i].length === 4) {
-        score += 2;
-      } else if (validWords[i].length === 5) {
-        score += 3;
-      } else if (validWords[i].length === 6) {
-        score += 4;
-      } else if (validWords[i].length >= 7) {
-        score += 5;
+  // valid words ran through if statement to score each word and add to score
+    var getGameScore = function(){
+      for (var i = 0; i < validWords.length; i++) {
+        if (validWords[i].length === 3) {
+          score++;
+        } else if (validWords[i].length === 4) {
+          score += 2;
+        } else if (validWords[i].length === 5) {
+          score += 3;
+        } else if (validWords[i].length === 6) {
+          score += 4;
+        } else if (validWords[i].length >= 7) {
+          score += 5;
+        }
       }
-    }
-    postScore();
-  };
+      postScore();
+    };
 
-// display sum of all words and display how many valid words played
-// sort .scoreBoard to have top score first
-// set local storage for All Scores to save top scores
-  var postScore = function(){
-    allScores.push(score);
-    var name = alert("You found " + validWords.length + " valid words for " + score + " points");
-    allScores.sort(function(a,b){
-      return b-a;
-    });
-    $('.scoreBoard').empty();
-    if (name !== null && score !== 0) {
-      for ( var i = 0; i < allScores.length ; i++ ) {
-      $('ol.scoreBoard').append('<li class="score">' + allScores[i] +  '</li>');
+  // display sum of all words and display how many valid words played
+  // sort .scoreBoard to have top score first
+  // set local storage for All Scores to save top scores
+    var postScore = function(){
+      if (score >= 15) {
+      allScores.push(score);
       }
-    } else {
-      score = 0;
-    }
-   localStorage.setItem('bestScores', JSON.stringify(allScores));
-  };
+      var name = alert("You found " + validWords.length + " valid words for " + score + " points");
+      allScores.sort(function(a,b){
+        return b-a;
+      });
+      $('.scoreBoard').empty();
+      if (name !== null && score !== 0) {
+        for ( var i = 0; i < allScores.length ; i++ ) {
+        $('ol.scoreBoard').append('<li class="score">' + allScores[i] +  '</li>');
+        }
+      } else {
+        score = 0;
+      }
+     localStorage.setItem('bestScores', JSON.stringify(allScores));
+    };
+};
   var clearScoreBoard = function(){
     $('.clearScores').on('click', function(){
       var allScores = [];
@@ -126,7 +130,6 @@ var getWords = function(){
       localStorage.clear();
     });
   };
-  clearScoreBoard();
-};
 getWords();
+clearScoreBoard();  
 });

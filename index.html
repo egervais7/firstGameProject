@@ -14,28 +14,27 @@
   <body>
     <nav class="navbar custNavBar">
       <div class="container container fluid">
-        <div class="navbar-header col-md-12">
+        <div class="navbar-header col-xs-12 col-md-12">
           <h1><center>Let's Search For Words!</center></h1>
         </div>
       </div>
     </nav>
     <section class="row playerRow">
-      <div class="col-md-3 scorePlayer1">
+      <div class="col-xs-3 col-md-3 scorePlayer1">
         <h2>Player</h2>
         <button type="button" class="btn btn-default scoreSum">Get score</button>
       </div>
-      <div class="col-md-6 timerDiv">
-        <h3>Gameboard<br>
+      <div class="col-xs-6 col-md-6 timerDiv">
+        <h3>
         <button type="button" class="btn btn-default shuffleBoard">Shuffle Board!</button></p>
         <span id="countdown">120</span>seconds
         </h3>
       </div>
-      <div class="col-md-3">
-        <h2>Score Board</h2>
+      <div class="col-xs-3 col-md-3">
       </div>
     </section>
     <section class="row gameRow">
-      <div class="col-md-3 player">
+      <div class="col-xs-3 col-md-3 player">
         <form class="playerForm">
         	  <input class="playerInput" type="text" placeholder="Type you word : ">
             <!-- <button type="button" class="btn btn-default playerOneSubmit">submit</button> -->
@@ -44,7 +43,7 @@
           <ol class="gameWords"></ol>
         </div>
       </div>
-      <div class="col-md-6" id="boggleBoard">
+      <div class="col-xs-6 col-md-6" id="boggleBoard">
         <div class="aisle" id="A">
           <div id="a1" class="dice"></div>
           <div id="a2" class="dice"></div>
@@ -70,7 +69,7 @@
           <div id="d4" class="dice"></div>
         </div>
       </div>
-      <div class="col-md-3 topScores">
+      <div class="col-xs-3 col-md-3 topScores">
         <h2>Top Scores!</h2>
         <button class='btn btn-default clearScores'>Clear top scores</button>
         <ol class="scoreBoard"></ol>
