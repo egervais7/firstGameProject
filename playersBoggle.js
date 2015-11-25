@@ -1,18 +1,19 @@
 $(document).ready(function() {
 
 if (localStorage.bestScores) {
-  var allScores = JSON.parse(localStorage.getItem('bestScores'));
+  allScores = JSON.parse(localStorage.getItem('bestScores'));
   for ( var i = 0; i < allScores.length ; i++ ) {
   $('ol.scoreBoard').append('<li class="score">' + allScores[i] + '</li>');
   }
 } else {
-  var allScores = [];
+  allScores = [];
 }
 
 var letters = ["A", "A", "A", "A", "A", "A", "B", "B", "C", "C", "D", "D", "D", "E", "E", "E", "E", "E", "E", "E", "E", "E", "E", "E", "F", "F", "G", "G", "H", "H", "H", "H", "H", "I", "I", "I", "I", "I", "I", "J", "K", "L", "L", "L", "L", "M", "M", "N", "N", "N", "N", "N", "N", "O", "O", "O", "O", "O", "O", "O", "P", "P", "Qu", "R", "R", "R", "R", "R", "S", "S", "S", "S", "S", "S", "T", "T", "T", "T", "T", "T", "T", "T", "T", "T", "U", "U", "U", "V", "V", "W", "W", "W", "X", "Y", "Y", "Y", "Z"];
 var dictionaryWords;
 var enteredWords = [];
 var validWords = [];
+var allScores = [];
 var score = 0;
 
 // jQuery to shuffle board with new letters, clear from previous game, alert rules, hide/show buttons, focus on player input, and start the countdown from 120 seconds, 2 minutes.
@@ -125,11 +126,11 @@ playerWords();
 };
   var clearScoreBoard = function(){
     $('.clearScores').on('click', function(){
-      var allScores = [];
+      allScores = [];
       $('.scoreBoard').empty();
       localStorage.clear();
     });
   };
 getWords();
-clearScoreBoard();  
+clearScoreBoard();
 });
