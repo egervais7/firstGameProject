@@ -20,19 +20,27 @@ h1 {
   top        : -30px;
 }
 .shuffleBoard {
-  font-size : 25px;
+  font-family : 'Press Start 2P', cursive;
+  font-size   : 25px;
 }
 #countdown {
   font-size : 45px;
 }
 .scoreSum {
+  font-family : 'Press Start 2P', cursive;
   font-size   : 20px;
   width       : 200px;
+  position    : relative;
+  left        : 15px;
 }
 h2 {
   color       : #0008AF;
   font-family : Courier New;
   font-weight : bold;
+}
+.topList {
+  position    : relative;
+  right       : 15px;
 }
 p {
   color : orange;
@@ -76,10 +84,6 @@ h3 {
   position : relative;
   top      : -30px;
 }
-.clearScores {
-  position : relative;
-  right    : 10px;
-}
 .playerInput {
   border-radius : 15px;
   font-size     : 20px;
@@ -122,8 +126,17 @@ h3 {
   font-weight : bold;
 }
 .scoreBoard {
+  font-family : 'Press Start 2P', cursive;
+  color       : black;
   text-align  : left;
   font-size   : 20px;
   position    : relative;
   left        : 140px;
+}
+.clearScores {
+  font-family  : 'Press Start 2P', cursive;
+  font-size    : 20px;
+  position     : relative;
+  top          : 25px;
+  right        : 45px;
 }
